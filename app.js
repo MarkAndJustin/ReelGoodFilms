@@ -27,3 +27,4 @@ movieTime.init = () => {
 movieTime.init();
 
 console.log("bjlabdf;safjaf")
+console.log("gibbrish")
