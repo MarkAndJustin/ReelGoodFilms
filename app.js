@@ -1,13 +1,13 @@
-const movieTime = {};
+const reelGoodFilms = {};
 
-movieTime.apiUrl = 'https://api.themoviedb.org/3/search/movie?';
-movieTime.apiKey = 'abca8adda9e521b362fff5ab08ec8402';
+reelGoodFilms.apiUrl = 'https://api.themoviedb.org/3/search/movie?';
+reelGoodFilms.apiKey = 'abca8adda9e521b362fff5ab08ec8402';
 
-movieTime.getMovies = () => {
-    const url = new URL(movieTime.apiUrl);
+reelGoodFilms.getMovies = () => {
+    const url = new URL(reelGoodFilms.apiUrl);
     url.search = new URLSearchParams({
-        api_key: movieTime.apiKey,
-        query: "spiderman"
+        api_key: reelGoodFilms.apiKey,
+        query: `${searchInput.value}`
     });
 
     fetch(url)
@@ -15,18 +15,36 @@ movieTime.getMovies = () => {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
+            console.log(data.results);
+            const searchResultsData = data.results;
+            reelGoodFilms.displayResults(searchResultsData);
         })
         console.log(url)
 }
 
-movieTime.init = () => {
-    movieTime.getMovies();
+reelGoodFilms.searchParam = () => {
+    const searchInput = document.querySelector('#searchInput');
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(searchInput.value);
+        reelGoodFilms.getMovies();
+    });
 }
 
-movieTime.init();
+reelGoodFilms.displayResults = (arrayOfData) => {
+    const paragraph = document.querySelector('p');
+    arrayOfData.forEach(movie => {
+        const movieDetails = document.createElement('p');
+        movieDetails.textContent = movie.title;
+        console.log(movieDetails);
+        const searchResults = document.querySelector('.searchResults');
+        searchResults.append(movieDetails);
+    });
+}
 
-console.log("bjlabdf;safjaf")
-console.log("gibbrish")
-console.log("more gibbrish")
-console.log('More gibberishsdfdfadsfsa')
+reelGoodFilms.init = () => {
+    reelGoodFilms.searchParam();
+}
+
+reelGoodFilms.init();
