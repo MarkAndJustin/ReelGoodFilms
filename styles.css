@@ -24,6 +24,9 @@ h1 {
 
 .discoverGenre {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .headingContainer {
@@ -38,10 +41,36 @@ h1 {
 
 .searchForm {
     width: 100%;
-    padding: 3% 0;
+    padding: 3% 5%;
+    display: flex;
+    justify-content: center;
 }
 
 .inputField {
     padding: 10px 0;
     width: 50%;
+    border: none;
+}
+
+/* Change buttons to same class */
+.searchButton,
+.discoverButton,
+.genreButton {
+    margin: 0;
+    padding: 10px 30px;
+    border: none;
+}
+
+.searchFormContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#discoverForm {
+    display: flex;
+}
+
+#genreForm {
+    display: flex;
 }
