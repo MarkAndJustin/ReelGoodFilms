@@ -66,12 +66,6 @@ reelGoodFilms.discoverMoviesByGenre = (genre) => {
         console.log(url)
 };
 
-// const genreSelect = document.querySelector('#genres');
-// genreSelect.addEventListener('change', () => {
-//     console.log(genreSelect.value)
-// });
-
-
 const searchResults = document.querySelector('.resultsOutput');
 const discoverButton = document.querySelector('.discoverButton');
 
@@ -113,6 +107,7 @@ reelGoodFilms.displaySearchResults = (arrayOfData) => {
         movieDetails.textContent = movie.title;
         const moviePoster = document.createElement('img');
         moviePoster.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+        moviePoster.alt = `Movie Poster for: ${movie.title}`;
         const movieReleaseDate = document.createElement('p');
         movieReleaseDate.textContent = `Release Date: ${movie.release_date}`;
         const movieOverview = document.createElement('p');
