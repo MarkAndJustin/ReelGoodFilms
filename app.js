@@ -104,7 +104,7 @@ reelGoodFilms.displaySearchResults = (arrayOfData) => {
     const paragraph = document.querySelector('p');
     arrayOfData.forEach(movie => {
         const moviePoster = document.createElement('img');
-        moviePoster.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+        moviePoster.src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
         moviePoster.alt = `Movie Poster for: ${movie.title}`;
         // Houses movie details ie title, desc., etc.
         const movieDetailsContainer = document.createElement('div');
@@ -114,7 +114,7 @@ reelGoodFilms.displaySearchResults = (arrayOfData) => {
         movieContainer.classList.add('movieContainer');
         const movieTitle = document.createElement('h2');
         movieTitle.textContent = movie.title;
-        const movieReleaseDate = document.createElement('p');
+        const movieReleaseDate = document.createElement('h3');
         movieReleaseDate.textContent = `Release Date: ${movie.release_date}`;
         const movieOverview = document.createElement('p');
         movieOverview.textContent = `Overview: ${movie.overview}`;
