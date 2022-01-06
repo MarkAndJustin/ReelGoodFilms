@@ -103,19 +103,26 @@ reelGoodFilms.searchByGenre = (genre) => {
 reelGoodFilms.displaySearchResults = (arrayOfData) => {
     const paragraph = document.querySelector('p');
     arrayOfData.forEach(movie => {
-        const movieDetails = document.createElement('p');
-        movieDetails.textContent = movie.title;
         const moviePoster = document.createElement('img');
         moviePoster.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
         moviePoster.alt = `Movie Poster for: ${movie.title}`;
+        // Houses movie details ie title, desc., etc.
+        const movieDetailsContainer = document.createElement('div');
+        movieDetailsContainer.classList.add('movieDetailsContainer');
+        // Houses movie poster and movie details
+        const movieContainer = document.createElement('div');
+        movieContainer.classList.add('movieContainer');
+        const movieTitle = document.createElement('h2');
+        movieTitle.textContent = movie.title;
         const movieReleaseDate = document.createElement('p');
         movieReleaseDate.textContent = `Release Date: ${movie.release_date}`;
         const movieOverview = document.createElement('p');
         movieOverview.textContent = `Overview: ${movie.overview}`;
         const movieRating = document.createElement('p');
         movieRating.textContent = `User Rating: ${movie.vote_average}`;
-        console.log(movieDetails);
-        searchResults.append(movieDetails, movieReleaseDate, moviePoster, movieOverview, movieRating);
+        movieDetailsContainer.append(movieTitle, movieReleaseDate, movieOverview, movieRating);
+        movieContainer.append(moviePoster, movieDetailsContainer)
+        searchResults.appendChild(movieContainer);
     });
 }
 
