@@ -24,12 +24,12 @@
 
         <div class="discoverGenreContainer">
             <form id="discoverForm" action="">
-                <input id="yearInput" class="inputField" type="text" placeholder="Search by Year">
+                <input id="yearInput" class="inputField" type="number" min="1881" placeholder="Search by Year">
                 <button class="formButton" type='submit'>Discover Movies</button>
             </form>
 
             <form id= "genreForm" action="">
-                <label for="genres">Choose a Genre:</label>
+                <label for="genres" class="genreLabel">Choose a Genre:</label>
                 <select name="genres" id="genres">
                     <option value="28">Action</option>
                     <option value="12">Adventure</option>
