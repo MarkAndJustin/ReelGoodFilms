@@ -66,7 +66,7 @@ reelGoodFilms.discoverMoviesByGenre = (genre) => {
         console.log(url)
 };
 
-const searchResults = document.querySelector('.resultsOutput');
+const searchResults = document.querySelector('.resultsWrapper');
 const discoverButton = document.querySelector('.discoverButton');
 
 reelGoodFilms.searchParam = () => {
