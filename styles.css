@@ -6,7 +6,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
-html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 125%}
 
 *, *:before, *:after {box-sizing: inherit}
 
@@ -24,12 +24,24 @@ header {
     font-family: 'Oswald', sans-serif;
 }
 
-
+/* FONT SIZES */
 
 h1 {
     font-size: 5rem;
     margin: 0;
     color: white;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 0.75rem;
 }
 
 label {
@@ -56,7 +68,7 @@ select {
 
 /* Might need to change this at some point, change to percentage? */
 .filmIcon {
-    height: 100px;
+    height: 110px;
     padding-right: 25px;
 }
 
@@ -80,6 +92,18 @@ select {
     border: none;
     background: gold;
 
+}
+
+/*Changed the button hover - 1-6*/
+.formButton:hover {
+    background: black;
+    transition: 0.3s ease-in-out;
+    color: gold;
+}
+
+/* not sure what we want to do with the click styling,leaving this as a placeholder for now - 1-6 */
+.formButton:active {
+    color: red;
 }
 
 .searchFormContainer{
@@ -136,6 +160,23 @@ input[type=number] {
     font-family: 'Oxygen', sans-serif;
 }
 
-img {
-padding: 30px 0;
+/* Updated width to 300px so if there is no movie poster the Alt will be contained - 1-6 */
+.movieContainer img {
+    padding: 30px 0;
+    width: 300px;
+}
+
+/* Created a rough footer with juno link - 1-6*/
+footer{
+    background-color: black;
+    color: white;
+}
+
+.junoFooterLink a{
+    text-decoration: none;
+    color: white;
+}
+
+.junoFooterLink a:hover{
+    color: orange;
 }
