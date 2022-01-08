@@ -1,0 +1,21 @@
+.movieContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.movieDetailsContainer {
+    width: 50%;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.movieContainer img {
+    padding: 60px 0 0 0;
+    width: 300px;
+}
+
+/* Added padding to top and bottom of last image to make it consistent -JV */
+.movieContainer:last-of-type img {
+    padding: 60px 0;
+    width: 300px;
+}

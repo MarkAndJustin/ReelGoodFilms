@@ -1,0 +1,36 @@
+select {
+    padding: 10px 0;
+    border: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.formButton {
+    margin: 0;
+    padding: 10px 30px;
+    border: none;
+    background: gold;
+}
+
+/* Moved transition over to parent, to allow ease to work as intended -JV */
+.formButton {
+  transition: 0.3s ease-in-out;
+}
+
+.formButton:hover {
+    background: black;
+    color: gold;
+}
+
+/* not sure what we want to do with the click styling,leaving this as a placeholder for now - 1-6 */
+.formButton:active {
+    color: red;
+}
+
+.inputField {
+    padding: 10px 0;
+    width: 50%;
+    border: none;
+}

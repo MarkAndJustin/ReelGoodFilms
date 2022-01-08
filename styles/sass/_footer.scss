@@ -1,0 +1,30 @@
+/* Flexxed footer so they are on the same line -JV */
+footer {
+    background-color: black;
+    color: white;
+}
+
+footer .wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.junoFooterLink a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Changed color to Juno color -JV */
+.junoFooterLink a:hover{
+    color: #ea593e;
+}
+
+footer .wrapper a{
+    color: white;
+}
+
+footer .wrapper a:hover{
+    color: gold;
+}

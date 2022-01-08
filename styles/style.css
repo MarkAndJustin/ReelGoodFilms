@@ -1,6 +1,6 @@
+/* Setup Snippet */
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
-/* Setup Snippet */
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -241,7 +241,7 @@ html {
 
 /* Global styling */
 header {
-  /* ADded a linear gradient for better contrast  */
+  /* Added a linear gradient for better contrast  */
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
   display: -webkit-box;
@@ -261,60 +261,16 @@ header {
   font-family: "Oswald", sans-serif;
 }
 
-/* FONT SIZES */
 h1 {
   font-size: 5rem;
   margin: 0;
   color: white;
 }
 
-h2 {
-  font-size: 1.25rem;
-}
-
-h3 {
-  font-size: 1rem;
-}
-
-p {
-  font-size: 0.75rem;
-}
-
-label {
-  color: white;
-}
-
-select {
-  padding: 10px 0;
-  border: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* Added a wrapper as per project requirements -JV */
-.wrapper {
-  width: 90%;
-  max-width: 2160px;
-}
-
-.resultsWrapper {
-  margin: 0 auto;
-}
-
-/* Containers */
-.discoverGenreContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+/* Might need to change this at some point, change to percentage? */
+.filmIcon {
+  height: 110px;
+  padding-right: 25px;
 }
 
 .headingContainer {
@@ -324,12 +280,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-/* Might need to change this at some point, change to percentage? */
-.filmIcon {
-  height: 110px;
-  padding-right: 25px;
 }
 
 .searchForm {
@@ -343,35 +293,6 @@ a {
           justify-content: center;
 }
 
-.inputField {
-  padding: 10px 0;
-  width: 50%;
-  border: none;
-}
-
-.formButton {
-  margin: 0;
-  padding: 10px 30px;
-  border: none;
-  background: gold;
-}
-
-/* Moved transition over to parent, to allow ease to work as intended -JV */
-.formButton {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-.formButton:hover {
-  background: black;
-  color: gold;
-}
-
-/* not sure what we want to do with the click styling,leaving this as a placeholder for now - 1-6 */
-.formButton:active {
-  color: red;
-}
-
 .searchFormContainer {
   width: 100%;
   display: -webkit-box;
@@ -382,30 +303,17 @@ a {
           justify-content: center;
 }
 
-#discoverForm {
+.discoverGenreContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 40%;
-}
-
-#genreForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#genres {
-  background-color: white;
-}
-
-#yearInput,
-#searchInput,
-#genres {
-  text-align: center;
 }
 
 /* Removes arrows from number input */
@@ -419,36 +327,35 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.genreLabel {
-  padding-right: 15px;
+/* Change id's to class*/
+#yearInput,
+#searchInput,
+#genres {
+  text-align: center;
 }
 
-.movieContainer {
+#genres {
+  background-color: white;
+}
+
+#genreForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.movieDetailsContainer {
-  width: 50%;
-  font-family: "Oxygen", sans-serif;
+#discoverForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
 }
 
-.movieContainer img {
-  padding: 60px 0 0 0;
-  width: 300px;
-}
-
-/* Added padding to top and bottom of last image to make it consistent -JV */
-.movieContainer:last-of-type img {
-  padding: 60px 0;
-  width: 300px;
+.genreLabel {
+  padding-right: 15px;
 }
 
 /* Flexxed footer so they are on the same line -JV */
@@ -485,4 +392,97 @@ footer .wrapper a {
 
 footer .wrapper a:hover {
   color: gold;
+}
+
+.movieContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movieDetailsContainer {
+  width: 50%;
+  font-family: "Oxygen", sans-serif;
+}
+
+.movieContainer img {
+  padding: 60px 0 0 0;
+  width: 300px;
+}
+
+/* Added padding to top and bottom of last image to make it consistent -JV */
+.movieContainer:last-of-type img {
+  padding: 60px 0;
+  width: 300px;
+}
+
+/* FONT SIZES */
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+label {
+  color: white;
+}
+
+select {
+  padding: 10px 0;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.formButton {
+  margin: 0;
+  padding: 10px 30px;
+  border: none;
+  background: gold;
+}
+
+/* Moved transition over to parent, to allow ease to work as intended -JV */
+.formButton {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.formButton:hover {
+  background: black;
+  color: gold;
+}
+
+/* not sure what we want to do with the click styling,leaving this as a placeholder for now - 1-6 */
+.formButton:active {
+  color: red;
+}
+
+.inputField {
+  padding: 10px 0;
+  width: 50%;
+  border: none;
+}
+
+/* Added a wrapper as per project requirements -JV */
+.wrapper {
+  width: 90%;
+  max-width: 2160px;
+}
+
+.resultsWrapper {
+  margin: 0 auto;
 }
