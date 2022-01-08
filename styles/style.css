@@ -257,7 +257,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90vh;
+  height: 100vh;
   font-family: "Oswald", sans-serif;
 }
 
@@ -327,18 +327,23 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/* Change id's to class*/
-#yearInput,
-#searchInput,
-#genres {
+/* Changed id's to class 1-8 JV*/
+.inputField,
+.genres {
   text-align: center;
 }
 
-#genres {
+.inputField {
+  padding: 10px 0;
+  width: 50%;
+  border: none;
+}
+
+.genres {
   background-color: white;
 }
 
-#genreForm {
+.genreForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,7 +352,7 @@ input[type=number] {
           align-items: center;
 }
 
-#discoverForm {
+.discoverForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -358,10 +363,12 @@ input[type=number] {
   padding-right: 15px;
 }
 
-/* Flexxed footer so they are on the same line -JV */
 footer {
   background-color: black;
   color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 footer .wrapper {
@@ -388,9 +395,12 @@ footer .wrapper {
 
 footer .wrapper a {
   color: white;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
-footer .wrapper a:hover {
+footer .wrapper a:nth-child(1):hover,
+footer .wrapper a:nth-child(2):hover {
   color: gold;
 }
 
@@ -416,10 +426,13 @@ footer .wrapper a:hover {
   width: 300px;
 }
 
-/* Added padding to top and bottom of last image to make it consistent -JV */
 .movieContainer:last-of-type img {
-  padding: 60px 0;
+  padding-bottom: 123px;
   width: 300px;
+}
+
+.movieContainer:last-of-type .movieDetailsContainer {
+  padding-bottom: 60px;
 }
 
 /* FONT SIZES */
@@ -471,13 +484,6 @@ a {
   color: red;
 }
 
-.inputField {
-  padding: 10px 0;
-  width: 50%;
-  border: none;
-}
-
-/* Added a wrapper as per project requirements -JV */
 .wrapper {
   width: 90%;
   max-width: 2160px;

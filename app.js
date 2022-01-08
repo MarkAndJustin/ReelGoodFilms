@@ -4,6 +4,8 @@ reelGoodFilms.apiUrl = 'https://api.themoviedb.org/3/search/movie';
 reelGoodFilms.discoverUrl = 'https://api.themoviedb.org/3/discover/movie';
 reelGoodFilms.apiKey = 'abca8adda9e521b362fff5ab08ec8402';
 
+reelGoodFilms.searchResults = document.querySelector('.resultsWrapper');
+
 reelGoodFilms.getMovies = () => {
     const url = new URL(reelGoodFilms.apiUrl);
     url.search = new URLSearchParams({
@@ -18,7 +20,7 @@ reelGoodFilms.getMovies = () => {
         .then((data) => {
             console.log(data);
             const searchResultsData = data.results;
-            searchResults.innerHTML = "";
+            reelGoodFilms.searchResults.innerHTML = "";
             reelGoodFilms.displaySearchResults(searchResultsData);
         })
         console.log(url)
@@ -39,7 +41,7 @@ reelGoodFilms.discoverMovies = () => {
         .then((data) => {
             console.log(data);
             const discoverMoviesData = data.results;
-            searchResults.innerHTML = "";
+            reelGoodFilms.searchResults.innerHTML = "";
             reelGoodFilms.displaySearchResults(discoverMoviesData);
         })
         console.log(url)
@@ -60,14 +62,12 @@ reelGoodFilms.discoverMoviesByGenre = (genre) => {
         .then((data) => {
             console.log(data);
             const discoverGenresData = data.results;
-            searchResults.innerHTML = "";
+            reelGoodFilms.searchResults.innerHTML = "";
             reelGoodFilms.displaySearchResults(discoverGenresData);
         })
         console.log(url)
 };
 
-const searchResults = document.querySelector('.resultsWrapper');
-const discoverButton = document.querySelector('.discoverButton');
 
 reelGoodFilms.searchParam = () => {
     const searchInput = document.querySelector('#searchInput');
@@ -134,7 +134,7 @@ reelGoodFilms.displaySearchResults = (arrayOfData) => {
         movieDetailsContainer.append(movieTitle, movieReleaseDate, movieOverviewHeading, 
             movieOverview, movieRatingHeading, movieRating);
         movieContainer.append(moviePoster, movieDetailsContainer)
-        searchResults.appendChild(movieContainer);
+        reelGoodFilms.searchResults.appendChild(movieContainer);
     });
 }
 

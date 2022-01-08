@@ -14,8 +14,12 @@
     width: 300px;
 }
 
-/* Added padding to top and bottom of last image to make it consistent -JV */
+// Added more padding to account for fixed footer 1-7, -JV
 .movieContainer:last-of-type img {
-    padding: 60px 0;
+    padding-bottom: 123px;
     width: 300px;
+}
+
+.movieContainer:last-of-type .movieDetailsContainer {
+    padding-bottom: 60px;
 }

@@ -1,7 +1,10 @@
-/* Flexxed footer so they are on the same line -JV */
+// Set footer's position to fixed to get rid of that whitespace 1-7, -JV
 footer {
     background-color: black;
     color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 footer .wrapper{
@@ -23,8 +26,10 @@ footer .wrapper{
 
 footer .wrapper a{
     color: white;
+    transition: color 0.3s ease-in-out;
 }
 
-footer .wrapper a:hover{
+footer .wrapper a:nth-child(1):hover,
+footer .wrapper a:nth-child(2):hover {
     color: gold;
 }

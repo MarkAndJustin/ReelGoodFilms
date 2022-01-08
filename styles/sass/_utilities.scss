@@ -1,15 +1,16 @@
-/* Added a wrapper as per project requirements -JV */
 .wrapper {
   width: 90%;
   max-width: 2160px;
 }
 
+// Wrapper for the header.
 .headerWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+// Wrapper for main section.
 .resultsWrapper {
   margin: 0 auto;
 }

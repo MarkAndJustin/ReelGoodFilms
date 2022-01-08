@@ -24,14 +24,14 @@
             </div>
             
             <div class="discoverGenreContainer">
-                <form id="discoverForm" action="">
+                <form id="discoverForm" class="discoverForm" action="">
                     <input id="yearInput" class="inputField" type="number" min="1881" placeholder="Search by Year">
-                    <button class="formButton" type='submit'>Discover Movies</button>
+                    <button class="formButton" type='submit'>Submit</button>
                 </form>
             
-                <form id="genreForm" action="">
+                <form id="genreForm" class="genreForm" action="">
                     <label for="genres" class="genreLabel">Choose a Genre:</label>
-                    <select name="genres" id="genres">
+                    <select name="genres" id="genres" class="genres">
                         <option value="28">Action</option>
                         <option value="12">Adventure</option>
                         <option value="16">Animation</option>
@@ -58,8 +58,9 @@
         </div>
     </header>
 
-<main class='searchResults'>
+<main id='searchResults'>
     <div class="resultsOutput">
+        <!-- Search results will go here -->
         <div class="wrapper resultsWrapper"></div>
     </div>
 </main>
