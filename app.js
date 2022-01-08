@@ -89,7 +89,7 @@ reelGoodFilms.searchByYear = () => {
     });
 }
 
-reelGoodFilms.searchByGenre = (genre) => {
+reelGoodFilms.searchByGenre = () => {
     const genreSelect = document.querySelector('#genres');
     const form = document.querySelector('#genreForm');
     form.addEventListener('submit', (event) => {
@@ -99,28 +99,40 @@ reelGoodFilms.searchByGenre = (genre) => {
     });
 }
 
-
 reelGoodFilms.displaySearchResults = (arrayOfData) => {
-    const paragraph = document.querySelector('p');
     arrayOfData.forEach(movie => {
+        // Houses movie poster and movie details
+        const movieContainer = document.createElement('div');
+        movieContainer.classList.add('movieContainer');
+        //Creates a img element for the movie poster.
         const moviePoster = document.createElement('img');
+        //Appends src and alt to image element. 
         moviePoster.src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
         moviePoster.alt = `Movie Poster for: ${movie.title}`;
         // Houses movie details ie title, desc., etc.
         const movieDetailsContainer = document.createElement('div');
         movieDetailsContainer.classList.add('movieDetailsContainer');
-        // Houses movie poster and movie details
-        const movieContainer = document.createElement('div');
-        movieContainer.classList.add('movieContainer');
+        // Creates an H2 heading for movie title
         const movieTitle = document.createElement('h2');
         movieTitle.textContent = movie.title;
+        // Creates  an H3 heading for movie release date.
         const movieReleaseDate = document.createElement('h3');
         movieReleaseDate.textContent = `Release Date: ${movie.release_date}`;
+        //Creates an H3 heading for movie overview
+        const movieOverviewHeading = document.createElement('h3');
+        movieOverviewHeading.textContent = 'Overview:'
+        // Creates a p tag for movie overview description. 
         const movieOverview = document.createElement('p');
-        movieOverview.textContent = `Overview: ${movie.overview}`;
+        movieOverview.textContent = `${movie.overview}`;
+        // Creates a H3 heading for movie rating.
+        const movieRatingHeading = document.createElement('h3');
+        movieRatingHeading.textContent = 'User Rating:'
+        //Creates a p tag for numerical movie rating. 
         const movieRating = document.createElement('p');
-        movieRating.textContent = `User Rating: ${movie.vote_average}`;
-        movieDetailsContainer.append(movieTitle, movieReleaseDate, movieOverview, movieRating);
+        movieRating.textContent = `${movie.vote_average}`;
+        //Appends above elements to respective containers (<divs>).
+        movieDetailsContainer.append(movieTitle, movieReleaseDate, movieOverviewHeading, 
+            movieOverview, movieRatingHeading, movieRating);
         movieContainer.append(moviePoster, movieDetailsContainer)
         searchResults.appendChild(movieContainer);
     });

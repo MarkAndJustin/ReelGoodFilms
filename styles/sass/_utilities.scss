@@ -4,6 +4,12 @@
   max-width: 2160px;
 }
 
+.headerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .resultsWrapper {
   margin: 0 auto;
 }
