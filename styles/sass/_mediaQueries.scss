@@ -76,7 +76,7 @@
         flex-direction: column;
     }
     .searchForm{
-        padding: 5% 0;
+        padding: 15% 0;
     }
     .inputField{
         width: 100%;
@@ -88,6 +88,37 @@
     .genreForm{
         flex-direction: column;
         width: 100%;
+    }
+    .genres{
+        width: 100%;
+    }
+    .formButton{
+        width: 100%;
+    }
+    .genreLabel{
+        padding: 5% 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .discoverGenreContainer {
+        flex-direction: column;
+    }
+    .searchForm{
+        padding: 15% 0;
+        flex-direction: column;
+    }
+    .inputField{
+        width: 100%;
+    }
+    .discoverForm{
+        width: 100%;
+        flex-direction: column;
+    }
+    .genreForm{
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 20%;
     }
     .genres{
         width: 100%;
