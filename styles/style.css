@@ -577,4 +577,47 @@ a {
   .filmIcon {
     height: 40px;
   }
+
+  .discoverGenreContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .searchForm {
+    padding: 5% 0;
+  }
+
+  .inputField {
+    width: 100%;
+  }
+
+  .discoverForm {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .genreForm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+
+  .genres {
+    width: 100%;
+  }
+
+  .formButton {
+    width: 100%;
+  }
+
+  .genreLabel {
+    padding: 5% 0;
+  }
 }

@@ -72,4 +72,30 @@
     .filmIcon {
         height: 40px;
     }
+    .discoverGenreContainer {
+        flex-direction: column;
+    }
+    .searchForm{
+        padding: 5% 0;
+    }
+    .inputField{
+        width: 100%;
+    }
+    .discoverForm{
+        width: 100%;
+        flex-direction: column;
+    }
+    .genreForm{
+        flex-direction: column;
+        width: 100%;
+    }
+    .genres{
+        width: 100%;
+    }
+    .formButton{
+        width: 100%;
+    }
+    .genreLabel{
+        padding: 5% 0;
+    }
 }
