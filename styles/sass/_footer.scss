@@ -32,10 +32,3 @@ footer .wrapper a{
         color: gold;
         }
 }
-
-@media only screen and (max-width: 1050px) {
-    footer .wrapper{
-        flex-direction: column;
-        align-items: center;
-    }
-}

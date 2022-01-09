@@ -387,8 +387,6 @@ footer .wrapper {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-
-/* Changed color to Juno color -JV */
 .junoFooterLink a:hover {
   color: #ea593e;
 }
@@ -398,9 +396,8 @@ footer .wrapper a {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-
 footer .wrapper a:nth-child(1):hover,
-footer .wrapper a:nth-child(2):hover {
+footer .wrapper a :nth-child(2):hover {
   color: gold;
 }
 
@@ -466,20 +463,13 @@ a {
   padding: 10px 30px;
   border: none;
   background: gold;
-}
-
-/* Moved transition over to parent, to allow ease to work as intended -JV */
-.formButton {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-
 .formButton:hover {
   background: black;
   color: gold;
 }
-
-/* not sure what we want to do with the click styling,leaving this as a placeholder for now - 1-6 */
 .formButton:active {
   color: red;
 }
@@ -504,4 +494,87 @@ a {
 
 .resultsWrapper {
   margin: 0 auto;
+}
+
+@media (max-width: 1050px) {
+  footer .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  footer .wrapper a {
+    text-align: center;
+  }
+
+  .movieContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .movieDetailsContainer {
+    text-align: center;
+    width: 100%;
+  }
+
+  .movieContainer:last-of-type .movieDetailsContainer {
+    padding-bottom: 149px;
+  }
+
+  .movieContainer:last-of-type img {
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 900px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .filmIcon {
+    height: 90px;
+  }
+
+  .inputField {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .filmIcon {
+    height: 70px;
+  }
+
+  .searchForm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .filmIcon {
+    height: 50px;
+  }
+}
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .filmIcon {
+    height: 40px;
+  }
 }
