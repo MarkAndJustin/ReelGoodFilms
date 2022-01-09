@@ -1,6 +1,9 @@
 select {
     padding: 10px 0;
     border: none;
+    &:focus {
+        border: initial;
+    }
 }
 
 a{
@@ -14,7 +17,8 @@ a{
     background: gold;
     transition: 0.3s ease-in-out;
 
-    &:hover{
+    &:hover, 
+    &:focus {
         background: black;
         color: gold;
     }
