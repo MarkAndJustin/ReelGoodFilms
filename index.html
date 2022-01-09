@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/35e5501a65.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="wrapper headerWrapper">
             <div class="headingContainer">
                 <img src="./film.png" alt="A film reel" class="filmIcon">
@@ -18,6 +18,7 @@
             
             <div class="searchFormContainer">
                 <form id="searchForm" class="searchForm" action="">
+                    <label for="searchInput" >Search for a movie:</label>
                     <input id="searchInput" class="inputField" type="text" placeholder="Search for Movies">
                     <button class="formButton" type="submit" aria-label="Submit query for movie">Submit</button>
                 </form>
@@ -25,6 +26,7 @@
             
             <div class="discoverGenreContainer">
                 <form id="discoverForm" class="discoverForm" action="">
+                    <label for="yearInput">Input Year:</label>
                     <input id="yearInput" class="inputField" type="number" min="1881" placeholder="Search by Year">
                     <button class="formButton" type='submit' aria-label="Submit year for movies">Submit</button>
                 </form>
@@ -55,6 +57,7 @@
                     <button class="formButton" type='submit' aria-label="Submit genre option for movies">Submit</button>
                 </form>
             </div>
+            <a href="#searchResults" class="jumpToResults" aria-label="Go to search results">Jump to search results</a>
         </div>
     </header>
 
@@ -67,11 +70,10 @@
 
 <footer>
     <div class="wrapper">
-        <div>
-            <p class="junoFooterLink"><a href="https://junocollege.com/" target="blank" aria-label="Go to Juno College's website">Created at Juno College</a></p>
-        </div>
-        <div>
+        <div class="footerLinks">
+            <a href="https://junocollege.com/" target="blank" aria-label="Go to Juno College's website">Created at Juno College</a>
             <p>Created by <a href="https://github.com/justinv416" target="blank" aria-label="Go to Justin Vien's Github">Justin Vien</a> & <a href="https://github.com/duffymark" target="blank" aria-label="Go to Mark Duffy's Github">Mark Duffy</a> © 2021 Reel Good Films Inc</p>
+            <a href="#header" aria-label="Return to the top of the page">Back To Top</a>
         </div>
     </div>
 </footer>

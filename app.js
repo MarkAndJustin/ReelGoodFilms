@@ -1,11 +1,18 @@
+//Initializes app as an empty object. 
 const reelGoodFilms = {};
 
+//Api endpoints/urls
 reelGoodFilms.apiUrl = 'https://api.themoviedb.org/3/search/movie';
 reelGoodFilms.discoverUrl = 'https://api.themoviedb.org/3/discover/movie';
+
+//Api key
 reelGoodFilms.apiKey = 'abca8adda9e521b362fff5ab08ec8402';
 
+//Div where all search results will be appended to. 
 reelGoodFilms.searchResults = document.querySelector('.resultsWrapper');
+reelGoodFilms.jumpToResults = document.querySelector('.jumpToResults');
 
+//Function that makes a call to the api and returns movie data. 
 reelGoodFilms.getMovies = () => {
     const url = new URL(reelGoodFilms.apiUrl);
     url.search = new URLSearchParams({
@@ -14,18 +21,18 @@ reelGoodFilms.getMovies = () => {
     });
 
     fetch(url)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            const searchResultsData = data.results;
-            reelGoodFilms.searchResults.innerHTML = "";
-            reelGoodFilms.displaySearchResults(searchResultsData);
-        })
-        console.log(url)
-}
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        const searchResultsData = data.results;
+        reelGoodFilms.searchResults.innerHTML = "";
+        reelGoodFilms.displaySearchResults(searchResultsData);
+        reelGoodFilms.jumpToResults.style.display = "block";
+    })
+};
 
+//Function that makes a call to the api with the discover endpoint. 
 reelGoodFilms.discoverMovies = () => {
     const url = new URL(reelGoodFilms.discoverUrl);
     url.search = new URLSearchParams({
@@ -35,16 +42,15 @@ reelGoodFilms.discoverMovies = () => {
     });
 
     fetch(url)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            const discoverMoviesData = data.results;
-            reelGoodFilms.searchResults.innerHTML = "";
-            reelGoodFilms.displaySearchResults(discoverMoviesData);
-        })
-        console.log(url)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        const discoverMoviesData = data.results;
+        reelGoodFilms.searchResults.innerHTML = "";
+        reelGoodFilms.displaySearchResults(discoverMoviesData);
+        reelGoodFilms.jumpToResults.style.display = "block";
+    })
 };
 
 reelGoodFilms.discoverMoviesByGenre = (genre) => {
@@ -56,49 +62,43 @@ reelGoodFilms.discoverMoviesByGenre = (genre) => {
     });
 
     fetch(url)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            const discoverGenresData = data.results;
-            reelGoodFilms.searchResults.innerHTML = "";
-            reelGoodFilms.displaySearchResults(discoverGenresData);
-        })
-        console.log(url)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        const discoverGenresData = data.results;
+        reelGoodFilms.searchResults.innerHTML = "";
+        reelGoodFilms.displaySearchResults(discoverGenresData);
+        reelGoodFilms.jumpToResults.style.display = "block";
+    })
 };
 
-
+//Function that grabs user input and runs getMovies function.
 reelGoodFilms.searchParam = () => {
-    const searchInput = document.querySelector('#searchInput');
     const form = document.querySelector('#searchForm');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log(searchInput.value);
         reelGoodFilms.getMovies();
     });
-}
+};
 
 reelGoodFilms.searchByYear = () => {
-    const yearInput = document.querySelector('#yearInput');
     const form = document.querySelector('#discoverForm');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log(yearInput.value);
         reelGoodFilms.discoverMovies();
     });
-}
+};
 
 reelGoodFilms.searchByGenre = () => {
-    const genreSelect = document.querySelector('#genres');
     const form = document.querySelector('#genreForm');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log(genreSelect.value);
         reelGoodFilms.discoverMoviesByGenre(genreSelect);
     });
-}
+};
 
+//Function that displays and appends data to the HTML. 
 reelGoodFilms.displaySearchResults = (arrayOfData) => {
     arrayOfData.forEach(movie => {
         // Houses movie poster and movie details
@@ -133,15 +133,17 @@ reelGoodFilms.displaySearchResults = (arrayOfData) => {
         //Appends above elements to respective containers (<divs>).
         movieDetailsContainer.append(movieTitle, movieReleaseDate, movieOverviewHeading, 
             movieOverview, movieRatingHeading, movieRating);
-        movieContainer.append(moviePoster, movieDetailsContainer)
+        movieContainer.append(moviePoster, movieDetailsContainer);
         reelGoodFilms.searchResults.appendChild(movieContainer);
     });
-}
+};
 
+//Initializes functions on page load. 
 reelGoodFilms.init = () => {
     reelGoodFilms.searchParam();
     reelGoodFilms.searchByYear();
     reelGoodFilms.searchByGenre();
-}
+};
 
+//Calls init function. 
 reelGoodFilms.init();

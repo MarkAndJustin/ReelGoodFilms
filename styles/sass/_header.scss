@@ -1,6 +1,5 @@
 /* Global styling */
 header {
-    /* Added a linear gradient for better contrast  */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +18,21 @@ h1 {
     color: white;
 }
 
-/* Might need to change this at some point, change to percentage? */
+label {
+    padding-right: 15px;
+}
+
+/* Removes arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .filmIcon {
     height: 110px;
     padding-right: 25px;
@@ -35,6 +48,7 @@ h1 {
     padding: 3% 5%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .searchFormContainer{
@@ -50,21 +64,8 @@ h1 {
     align-items: center;
 }
 
-/* Removes arrows from number input */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-/* Changed id's to class 1-8 JV*/
 .inputField,
-.genres
-{
+.genres {
     text-align: center;
 }
 
@@ -85,9 +86,25 @@ input[type=number] {
 
 .discoverForm {
     display: flex;
+    align-items: center;
     width: 40%;
 }
 
-.genreLabel{
-    padding-right: 15px;
+.jumpToResults {
+    display: none;
+    padding: 5% 0;
+}
+
+.jumpToResults::after {
+    content: "";
+    height: 1px;
+    color: gold;
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    } to {
+        width: 100%;
+    }
 }

@@ -241,7 +241,6 @@ html {
 
 /* Global styling */
 header {
-  /* Added a linear gradient for better contrast  */
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
   background-repeat: no-repeat;
@@ -270,7 +269,21 @@ h1 {
   color: white;
 }
 
-/* Might need to change this at some point, change to percentage? */
+label {
+  padding-right: 15px;
+}
+
+/* Removes arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .filmIcon {
   height: 110px;
   padding-right: 25px;
@@ -294,6 +307,9 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .searchFormContainer {
@@ -319,18 +335,6 @@ h1 {
           align-items: center;
 }
 
-/* Removes arrows from number input */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-/* Changed id's to class 1-8 JV*/
 .inputField,
 .genres {
   text-align: center;
@@ -359,19 +363,47 @@ input[type=number] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 40%;
 }
 
-.genreLabel {
-  padding-right: 15px;
+.jumpToResults {
+  display: none;
+  padding: 5% 0;
 }
 
+.jumpToResults::after {
+  content: "";
+  height: 1px;
+  color: gold;
+}
+
+@-webkit-keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 footer {
   background-color: black;
   color: white;
   width: 100%;
   position: fixed;
   bottom: 0;
+  text-align: center;
 }
 
 footer .wrapper {
@@ -381,27 +413,31 @@ footer .wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
 }
 
-.junoFooterLink a {
-  text-decoration: none;
-  color: white;
+footer .wrapper a {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-.junoFooterLink a:hover {
-  color: #ea593e;
+footer .wrapper a:hover {
+  color: gold;
 }
 
-footer .wrapper a {
-  color: white;
-  -webkit-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
-}
-footer .wrapper a:nth-child(1):hover,
-footer .wrapper a :nth-child(2):hover {
-  color: gold;
+.footerLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 .movieContainer {
@@ -435,6 +471,12 @@ footer .wrapper a :nth-child(2):hover {
   padding-bottom: 60px;
 }
 
+.rtt {
+  width: 50px;
+  height: 50px;
+  background: gold;
+}
+
 /* FONT SIZES */
 h2 {
   font-size: 1.5rem;
@@ -452,6 +494,10 @@ label {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 select {
   padding: 10px 0;
   border: none;
@@ -462,6 +508,7 @@ select:focus {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .formButton {
@@ -542,12 +589,62 @@ a {
     font-size: 4rem;
   }
 
+  label {
+    padding: 5% 0;
+  }
+
   .filmIcon {
     height: 90px;
   }
 
   .inputField {
     width: 100%;
+  }
+
+  .discoverGenreContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .searchForm {
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .discoverForm {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .genreForm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+
+  .genres {
+    width: 100%;
+  }
+
+  .formButton {
+    width: 100%;
+  }
+
+  .footerLinks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 @media (max-width: 700px) {
@@ -582,97 +679,5 @@ a {
 
   .filmIcon {
     height: 40px;
-  }
-
-  .discoverGenreContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .searchForm {
-    padding: 15% 0;
-  }
-
-  .inputField {
-    width: 100%;
-  }
-
-  .discoverForm {
-    width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .genreForm {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-  }
-
-  .genres {
-    width: 100%;
-  }
-
-  .formButton {
-    width: 100%;
-  }
-
-  .genreLabel {
-    padding: 5% 0;
-  }
-}
-@media (max-width: 900px) {
-  .discoverGenreContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .searchForm {
-    padding: 15% 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .inputField {
-    width: 100%;
-  }
-
-  .discoverForm {
-    width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .genreForm {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    padding-bottom: 20%;
-  }
-
-  .genres {
-    width: 100%;
-  }
-
-  .formButton {
-    width: 100%;
-  }
-
-  .genreLabel {
-    padding: 5% 0;
   }
 }

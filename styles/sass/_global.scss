@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 select {
     padding: 10px 0;
     border: none;
@@ -6,8 +10,9 @@ select {
     }
 }
 
-a{
+a {
     text-decoration: none;
+    color: white;
 }
 
 .formButton {
@@ -16,13 +21,11 @@ a{
     border: none;
     background: gold;
     transition: 0.3s ease-in-out;
-
     &:hover, 
     &:focus {
         background: black;
         color: gold;
     }
-
     &:active{
         color: red;    
     }

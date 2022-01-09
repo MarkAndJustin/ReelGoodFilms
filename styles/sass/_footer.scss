@@ -5,30 +5,28 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
+    text-align: center;
 }
 
 footer .wrapper{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
 }
 
-.junoFooterLink a{
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out;
-    
-        &:hover{
-            color: #ea593e;
-        }
-}
-
 footer .wrapper a{
-    color: white;
     transition: color 0.3s ease-in-out;
-
-        &:nth-child(1):hover,
-        :nth-child(2):hover{
+    &:hover {
         color: gold;
-        }
+    }
 }
+
+.footerLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
