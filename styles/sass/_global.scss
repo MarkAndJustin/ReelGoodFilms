@@ -12,20 +12,14 @@ a{
     padding: 10px 30px;
     border: none;
     background: gold;
-}
+    transition: 0.3s ease-in-out;
 
-/* Moved transition over to parent, to allow ease to work as intended -JV */
-.formButton {
-  transition: 0.3s ease-in-out;
-}
+    &:hover{
+        background: black;
+        color: gold;
+    }
 
-.formButton:hover {
-    background: black;
-    color: gold;
+    &:active{
+        color: red;    
+    }
 }
-
-/* not sure what we want to do with the click styling,leaving this as a placeholder for now - 1-6 */
-.formButton:active {
-    color: red;
-}
-

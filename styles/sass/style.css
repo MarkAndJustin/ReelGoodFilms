@@ -1,0 +1,451 @@
+/* Setup Snippet */
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 125%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Global styling */
+header {
+  /* Added a linear gradient for better contrast  */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 0;
+  color: white;
+}
+
+/* Might need to change this at some point, change to percentage? */
+.filmIcon {
+  height: 110px;
+  padding-right: 25px;
+}
+
+.headingContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchForm {
+  width: 100%;
+  padding: 3% 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.searchFormContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.discoverGenreContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Removes arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Changed id's to class 1-8 JV*/
+.inputField,
+.genres {
+  text-align: center;
+}
+
+.inputField {
+  padding: 10px 0;
+  width: 50%;
+  border: none;
+}
+
+.genres {
+  background-color: white;
+}
+
+.genreForm {
+  display: flex;
+  align-items: center;
+}
+
+.discoverForm {
+  display: flex;
+  width: 40%;
+}
+
+.genreLabel {
+  padding-right: 15px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.junoFooterLink a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+.junoFooterLink a:hover {
+  color: #ea593e;
+}
+
+footer .wrapper a {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+footer .wrapper a:nth-child(1):hover,
+footer .wrapper a :nth-child(2):hover {
+  color: gold;
+}
+
+@media only screen and (max-width: 1050px) {
+  footer .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.movieContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.movieDetailsContainer {
+  width: 50%;
+  font-family: "Oxygen", sans-serif;
+}
+
+.movieContainer img {
+  padding: 60px 0 0 0;
+  width: 300px;
+}
+
+.movieContainer:last-of-type img {
+  padding-bottom: 123px;
+  width: 300px;
+}
+
+.movieContainer:last-of-type .movieDetailsContainer {
+  padding-bottom: 60px;
+}
+
+/* FONT SIZES */
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+label {
+  color: white;
+}
+
+select {
+  padding: 10px 0;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.formButton {
+  margin: 0;
+  padding: 10px 30px;
+  border: none;
+  background: gold;
+  transition: 0.3s ease-in-out;
+}
+.formButton:hover {
+  background: black;
+  color: gold;
+}
+.formButton:active {
+  color: red;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 2160px;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resultsWrapper {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1050px) {
+  footer .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}/*# sourceMappingURL=style.css.map */
