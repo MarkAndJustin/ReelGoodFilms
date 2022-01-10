@@ -25,6 +25,7 @@ reelGoodFilms.getMovies = () => {
         return response.json();
     })
     .then((data) => {
+        console.log(data)
         const searchResultsData = data.results;
         reelGoodFilms.searchResults.innerHTML = "";
         reelGoodFilms.displaySearchResults(searchResultsData);
