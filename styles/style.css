@@ -564,6 +564,10 @@ a {
     text-align: center;
   }
 
+  label {
+    padding: 3% 0;
+  }
+
   .movieContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -582,19 +586,6 @@ a {
 
   .movieContainer:last-of-type img {
     padding-bottom: 60px;
-  }
-}
-@media (max-width: 900px) {
-  h1 {
-    font-size: 4rem;
-  }
-
-  label {
-    padding: 5% 0;
-  }
-
-  .filmIcon {
-    height: 90px;
   }
 
   .inputField {
@@ -647,6 +638,15 @@ a {
             flex-direction: column;
   }
 }
+@media (max-width: 900px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .filmIcon {
+    height: 90px;
+  }
+}
 @media (max-width: 700px) {
   h1 {
     font-size: 3rem;
@@ -661,6 +661,14 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .headerWrapper {
+    margin-bottom: 15%;
+  }
+
+  .headingContainer {
+    margin-bottom: 10%;
   }
 }
 @media (max-width: 500px) {
@@ -679,5 +687,10 @@ a {
 
   .filmIcon {
     height: 40px;
+    padding-right: 15px;
+  }
+
+  .headerWrapper {
+    margin-bottom: 50%;
   }
 }

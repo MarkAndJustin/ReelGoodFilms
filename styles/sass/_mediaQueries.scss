@@ -8,6 +8,10 @@
         text-align: center;
     }
 
+    label {
+        padding: 3% 0;
+    }
+
     .movieContainer {
         flex-direction: column;
     }
@@ -24,21 +28,6 @@
     .movieContainer:last-of-type img {
         padding-bottom: 60px;
     }
-}
-
-@media (max-width: 900px) {
-    h1 {
-        font-size: 4rem;
-    }
-
-    label {
-        padding: 5% 0;
-    }
-
-    .filmIcon {
-        height: 90px
-    }
-
     .inputField {
         width: 100%;
     }
@@ -75,6 +64,16 @@
     }
 }
 
+@media (max-width: 900px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .filmIcon {
+        height: 90px
+    }
+}
+
 @media (max-width: 700px) {
     h1 {
         font-size: 3rem;
@@ -86,6 +85,12 @@
 
     .searchForm {
         flex-direction: column;
+    }
+    .headerWrapper{
+        margin-bottom: 15%;
+    }
+    .headingContainer{
+        margin-bottom: 10%;
     }
 }
 
@@ -103,8 +108,13 @@
     h1 {
         font-size: 1.5rem;
     } 
-    
+
     .filmIcon {
         height: 40px;
+        padding-right: 15px;
+    }
+    
+    .headerWrapper{
+        margin-bottom: 50%;
     }
 }
