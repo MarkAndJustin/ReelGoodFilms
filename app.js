@@ -92,6 +92,7 @@ reelGoodFilms.searchByYear = () => {
 
 reelGoodFilms.searchByGenre = () => {
     const form = document.querySelector('#genreForm');
+    const genreSelect = document.querySelector('#genres')
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         reelGoodFilms.discoverMoviesByGenre(genreSelect);
