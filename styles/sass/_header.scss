@@ -96,8 +96,9 @@ input[type=number] {
 //Anchor tag that jumps to results.
 .jumpToResults {
     display: none;
+    text-align: center;
     font-size: 1.5rem;
-    margin: 5% 0 0 0;
+    margin: 2% 0 0 0;
     position: relative;
     transition: color 0.3s ease-in-out;
     &:hover,
