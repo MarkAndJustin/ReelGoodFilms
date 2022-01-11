@@ -305,7 +305,7 @@ input[type=number] {
 
 .searchForm {
   width: 100%;
-  padding: 3% 0;
+  padding: 3% 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,7 +434,7 @@ footer .wrapper a {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-footer .wrapper a:hover {
+footer .wrapper a:focus, footer .wrapper a:hover {
   color: gold;
 }
 
@@ -502,6 +502,12 @@ p {
 }
 
 label, a, h1 {
+  color: white;
+}
+
+.discoverParagraph {
+  text-shadow: 3px 1px black;
+  font-size: 1.25rem;
   color: white;
 }
 
