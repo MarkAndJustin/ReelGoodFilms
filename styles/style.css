@@ -241,8 +241,8 @@ html {
 
 /* Global styling */
 header {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(0, 0, 0, 0.8))), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.8)), url(/noom-peerapong-2uwFEAGUm6E-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -259,18 +259,13 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  height: calc(100vh - 63px);
   font-family: "Oswald", sans-serif;
-}
-
-h1 {
-  font-size: 5rem;
-  margin: 0;
-  color: white;
 }
 
 label {
   padding-right: 15px;
+  text-shadow: 2px 1px black;
 }
 
 /* Removes arrows from number input */
@@ -298,9 +293,19 @@ input[type=number] {
           align-items: center;
 }
 
+.searchFormContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .searchForm {
   width: 100%;
-  padding: 3% 5%;
+  padding: 3% 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,16 +315,6 @@ input[type=number] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.searchFormContainer {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .discoverGenreContainer {
@@ -335,19 +330,14 @@ input[type=number] {
           align-items: center;
 }
 
-.inputField,
-.genres {
-  text-align: center;
-}
-
-.inputField {
-  padding: 10px 0;
-  width: 50%;
-  border: none;
-}
-
-.genres {
-  background-color: white;
+.discoverForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
 }
 
 .genreForm {
@@ -359,25 +349,48 @@ input[type=number] {
           align-items: center;
 }
 
-.discoverForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 40%;
+.inputField,
+.genreSelect {
+  text-align: center;
+}
+
+.inputField {
+  padding: 10px 0;
+  width: 50%;
+  border: none;
+}
+.inputField:focus {
+  outline: 5px solid gold;
+}
+
+.genreSelect {
+  background-color: white;
+}
+.genreSelect:focus {
+  outline: 5px solid gold;
 }
 
 .jumpToResults {
   display: none;
-  padding: 5% 0;
+  font-size: 1.5rem;
+  margin: 5% 0 0 0;
+  position: relative;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.jumpToResults:hover, .jumpToResults:focus {
+  color: gold;
 }
 
 .jumpToResults::after {
   content: "";
-  height: 1px;
-  color: gold;
+  position: absolute;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: gold;
+  -webkit-animation: grow 1s forwards;
+          animation: grow 1s forwards;
 }
 
 @-webkit-keyframes grow {
@@ -401,8 +414,6 @@ footer {
   background-color: black;
   color: white;
   width: 100%;
-  position: fixed;
-  bottom: 0;
   text-align: center;
 }
 
@@ -423,7 +434,7 @@ footer .wrapper a {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-footer .wrapper a:hover {
+footer .wrapper a:focus, footer .wrapper a:hover {
   color: gold;
 }
 
@@ -452,19 +463,19 @@ footer .wrapper a:hover {
           align-items: center;
 }
 
-.movieDetailsContainer {
-  width: 50%;
-  font-family: "Oxygen", sans-serif;
-}
-
 .movieContainer img {
   padding: 60px 0 0 0;
   width: 300px;
 }
 
 .movieContainer:last-of-type img {
-  padding-bottom: 123px;
+  padding-bottom: 60px;
   width: 300px;
+}
+
+.movieDetailsContainer {
+  width: 50%;
+  font-family: "Oxygen", sans-serif;
 }
 
 .movieContainer:last-of-type .movieDetailsContainer {
@@ -472,6 +483,15 @@ footer .wrapper a:hover {
 }
 
 /* FONT SIZES */
+<<<<<<< HEAD
+=======
+h1 {
+  font-size: 5rem;
+  margin: 0;
+  text-shadow: 10px 1px black;
+}
+
+>>>>>>> collab-branch
 h2 {
   font-size: 1.5rem;
 }
@@ -484,7 +504,13 @@ p {
   font-size: 1rem;
 }
 
-label {
+label, a, h1 {
+  color: white;
+}
+
+.discoverParagraph {
+  text-shadow: 3px 1px black;
+  font-size: 1.25rem;
   color: white;
 }
 
@@ -502,7 +528,6 @@ select:focus {
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 .formButton {
@@ -544,6 +569,10 @@ a {
 }
 
 @media (max-width: 1050px) {
+  header {
+    height: calc(100vh - 109px);
+  }
+
   footer .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -575,7 +604,7 @@ a {
   }
 
   .movieContainer:last-of-type .movieDetailsContainer {
-    padding-bottom: 149px;
+    padding-bottom: 60px;
   }
 
   .movieContainer:last-of-type img {
@@ -617,7 +646,7 @@ a {
     width: 100%;
   }
 
-  .genres {
+  .genreSelect {
     width: 100%;
   }
 
@@ -639,6 +668,11 @@ a {
 
   .filmIcon {
     height: 90px;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    height: calc(100vh - 132px);
   }
 }
 @media (max-width: 700px) {
@@ -668,6 +702,7 @@ a {
 @media (max-width: 500px) {
   h1 {
     font-size: 2rem;
+    text-shadow: 3px 3px black;
   }
 
   .filmIcon {

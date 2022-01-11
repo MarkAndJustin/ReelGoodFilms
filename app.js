@@ -12,12 +12,32 @@ reelGoodFilms.apiKey = 'abca8adda9e521b362fff5ab08ec8402';
 reelGoodFilms.searchResults = document.querySelector('.resultsWrapper');
 reelGoodFilms.jumpToResults = document.querySelector('.jumpToResults');
 
+//Initializes functions on page load. 
+reelGoodFilms.init = () => {
+    reelGoodFilms.searchParam();
+    reelGoodFilms.searchByYear();
+    reelGoodFilms.searchByGenre();
+};
+
+/* Error handling function that checks to see if there are results for the user inputted query, 
+will update message/aria-label accordingly. */
+reelGoodFilms.checkResults = (searchResults) => {
+    if(searchResults.length === 0) {
+        reelGoodFilms.jumpToResults.textContent = "No results found, please try again.";
+        reelGoodFilms.jumpToResults.setAttribute("aria-label", "No search results found");
+    } else {
+        reelGoodFilms.jumpToResults.textContent = "Jump to search results"
+        reelGoodFilms.jumpToResults.setAttribute("aria-label", "Click to go to search results");
+    };
+};
+
 //Function that makes a call to the api and returns movie data. 
 reelGoodFilms.getMovies = () => {
     const url = new URL(reelGoodFilms.apiUrl);
     url.search = new URLSearchParams({
         api_key: reelGoodFilms.apiKey,
-        query: `${searchInput.value}`
+        query: `${searchInput.value}`,
+        include_adult: false
     });
 
     fetch(url)
@@ -28,6 +48,7 @@ reelGoodFilms.getMovies = () => {
         console.log(data)
         const searchResultsData = data.results;
         reelGoodFilms.searchResults.innerHTML = "";
+        reelGoodFilms.checkResults(searchResultsData);
         reelGoodFilms.displaySearchResults(searchResultsData);
         reelGoodFilms.jumpToResults.style.display = "block";
     })
@@ -39,7 +60,7 @@ reelGoodFilms.discoverMovies = () => {
     url.search = new URLSearchParams({
         api_key: reelGoodFilms.apiKey,
         year: `${yearInput.value}`,
-        include_adult: false
+        include_adult: false,
     });
 
     fetch(url)
@@ -49,6 +70,7 @@ reelGoodFilms.discoverMovies = () => {
     .then((data) => {
         const discoverMoviesData = data.results;
         reelGoodFilms.searchResults.innerHTML = "";
+        reelGoodFilms.checkResults(discoverMoviesData);
         reelGoodFilms.displaySearchResults(discoverMoviesData);
         reelGoodFilms.jumpToResults.style.display = "block";
     })
@@ -69,6 +91,7 @@ reelGoodFilms.discoverMoviesByGenre = (genre) => {
     .then((data) => {
         const discoverGenresData = data.results;
         reelGoodFilms.searchResults.innerHTML = "";
+        reelGoodFilms.checkResults(discoverGenresData);
         reelGoodFilms.displaySearchResults(discoverGenresData);
         reelGoodFilms.jumpToResults.style.display = "block";
     })
@@ -83,6 +106,7 @@ reelGoodFilms.searchParam = () => {
     });
 };
 
+//Function that grabs user input and runs discoverMovies function.
 reelGoodFilms.searchByYear = () => {
     const form = document.querySelector('#discoverForm');
     form.addEventListener('submit', (event) => {
@@ -91,9 +115,10 @@ reelGoodFilms.searchByYear = () => {
     });
 };
 
+//Function that grabs user input and runs discoverMoviesByGenre function.
 reelGoodFilms.searchByGenre = () => {
     const form = document.querySelector('#genreForm');
-    const genreSelect = document.querySelector('#genres')
+    const genreSelect = document.querySelector('#genreSelect');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         reelGoodFilms.discoverMoviesByGenre(genreSelect);
@@ -138,13 +163,6 @@ reelGoodFilms.displaySearchResults = (arrayOfData) => {
         movieContainer.append(moviePoster, movieDetailsContainer);
         reelGoodFilms.searchResults.appendChild(movieContainer);
     });
-};
-
-//Initializes functions on page load. 
-reelGoodFilms.init = () => {
-    reelGoodFilms.searchParam();
-    reelGoodFilms.searchByYear();
-    reelGoodFilms.searchByGenre();
 };
 
 //Calls init function. 
